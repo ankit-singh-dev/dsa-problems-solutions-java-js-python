@@ -1,14 +1,14 @@
 package com.inn.linkedlist;
 
-class Node {
+class Node1 {
 	int data;
-	Node prev;
-	Node next;
+	Node1 prev;
+	Node1 next;
 
-	public Node() {
+	public Node1() {
 	}
 
-	public Node(int data) {
+	public Node1(int data) {
 		this.data = data;
 		this.prev = null;
 		this.next = null;
@@ -23,11 +23,11 @@ class Node {
 public class MergeTwoSortedLinkedList {
 
 	public static void main(String[] args) {
-		Node ll11 = new Node(10);
-		Node ll12 = new Node(50);
-		Node ll13 = new Node(70);
-		Node ll14 = new Node(90);
-		Node ll15 = new Node(100);
+		Node1 ll11 = new Node1(10);
+		Node1 ll12 = new Node1(50);
+		Node1 ll13 = new Node1(70);
+		Node1 ll14 = new Node1(90);
+		Node1 ll15 = new Node1(100);
 		ll11.next = ll12;
 		ll12.prev = ll11;
 		
@@ -40,11 +40,11 @@ public class MergeTwoSortedLinkedList {
 		ll14.next = ll15;
 		ll15.prev = ll14;
 
-		Node ll21 = new Node(20);
-		Node ll22 = new Node(30);
-		Node ll23 = new Node(40);
-		Node ll24 = new Node(60);
-		Node ll25 = new Node(80);
+		Node1 ll21 = new Node1(20);
+		Node1 ll22 = new Node1(30);
+		Node1 ll23 = new Node1(40);
+		Node1 ll24 = new Node1(60);
+		Node1 ll25 = new Node1(80);
 		ll21.next = ll22;
 		ll22.prev = ll21;
 		
@@ -57,21 +57,21 @@ public class MergeTwoSortedLinkedList {
 		ll24.next = ll25;
 		ll25.prev = ll24;
 
-		Node ansNode = mergeSortedLL(ll11, ll21);
+		Node1 ansNode = mergeSortedLL(ll11, ll21);
 		while(ansNode != null) {
 			System.out.print(ansNode + "->");
 			ansNode = ansNode.next;
 		}
 	}
 
-	private static Node mergeSortedLL(Node linkedList1, Node linkedList2) {
+	private static Node1 mergeSortedLL(Node1 linkedList1, Node1 linkedList2) {
 
 		boolean isSortedHeadFound = false;
-		Node firstNode = null;
+		Node1 firstNode = null;
 
-		Node p = linkedList1;
-		Node q = linkedList2;
-		Node s = null;
+		Node1 p = linkedList1;
+		Node1 q = linkedList2;
+		Node1 s = null;
 
 		while (p != null && q != null) {
 			if (p.data <= q.data) {
