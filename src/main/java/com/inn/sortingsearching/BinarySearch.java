@@ -1,5 +1,9 @@
 package com.inn.sortingsearching;
 
+/*
+ * https://leetcode.com/problems/binary-search/description/
+ */
+
 public class BinarySearch {
 	
 	public static void main(String[] args) {

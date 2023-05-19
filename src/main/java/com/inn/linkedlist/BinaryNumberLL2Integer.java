@@ -1,10 +1,13 @@
 package com.inn.linkedlist;
 
+import lombok.Setter;
+
 /*
  * Leetcode-1290
  * https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
  */
 
+@Setter
 class ListNode {
 	int val;
 	ListNode next;
