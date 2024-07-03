@@ -7,8 +7,7 @@ public class StringSubSequence {
 
     public static void main(String[] args) {
         String str = "abcd";
-        List<String> firstOut = getSubSequence(str);
-        System.out.println(firstOut);
+        System.out.println(getSubSequence(str));
     }
     private static List<String> getSubSequence(String str){
         if(str.isEmpty()){
