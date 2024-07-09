@@ -24,36 +24,31 @@ public class MazePathsWithJump {
             return basePath;
         }
 
+        List<String> allPaths = new ArrayList<>();
         //make n vertical jumps
-        List<String> vericalJumps = new ArrayList<>();
-        for(int i=1;i<4;i++){
-            vericalJumps = getMazePaths(sr+i, sc, dr, dc);
+        for(int i=1;i<=(dr-sr);i++){
+            List<String> vericalJumps = getMazePaths(sr+i, sc, dr, dc);
+            for(String verticalJump : vericalJumps){
+                allPaths.add("v"+i+verticalJump);
+            }
         }
 
         //make n horizontal jumps
-        List<String> horizontalJumps = new ArrayList<>();
-        for(int i=1;i<4;i++){
-            horizontalJumps = getMazePaths(sr, sc+i, dr, dc);
+        for(int i=1;i<=(dc-sc);i++){
+            List<String> horizontalJumps = getMazePaths(sr, sc+i, dr, dc);
+            for(String horizontalJump : horizontalJumps){
+                allPaths.add("h"+i+horizontalJump);
+            }
         }
 
         //make n diagonal jumps
-        List<String> diagonalJumps = new ArrayList<>();
-        for(int i=1;i<4;i++){
-            diagonalJumps = getMazePaths(sr+i, sc+i, dr, dc);
+        for(int i=1;(i<=dr-sr) && (i<=dc-sc);i++){
+            List<String> diagonalJumps = getMazePaths(sr+i, sc+i, dr, dc);
+            for(String diagonalJump : diagonalJumps){
+                allPaths.add("d"+i+diagonalJump);
+            }
         }
 
-        List<String> allPaths = new ArrayList<>();
-        for(String verticalJump : vericalJumps){
-            allPaths.add("v"+verticalJump);
-        }
-
-        for(String horizontalJump : horizontalJumps){
-            allPaths.add("h"+horizontalJump);
-        }
-
-        for(String diagonalJump : diagonalJumps){
-            allPaths.add("d"+diagonalJump);
-        }
         return allPaths;
     }
 }
