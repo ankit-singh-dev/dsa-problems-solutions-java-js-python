@@ -13,6 +13,48 @@ public class MazePathsWithJump {
         List<String> allThePaths = getMazePaths(1,1,4,4);
         System.out.println(allThePaths);
         System.out.println(allThePaths.size());
+        System.out.println();
+        printMazePaths(0,0,3,3,new StringBuilder());
+    }
+
+    // sr = source row, sc = source column, dr = destination row, dc = destination column, output = stringbuilder
+    private static void printMazePaths(int sr, int sc, int dr, int dc, StringBuilder output){
+
+        if(sr == dr && sc == dc){
+            System.out.print(output + " ");
+            return;
+        }else if(sr > dr || sc > dc){
+            return;
+        }
+
+        // jump vertical
+        for(int jv =1;jv<=(dr-sr);jv++){
+            printMazePaths(sr+jv, sc, dr, dc, output.append("v").append(jv));
+            if(!output.isEmpty()){
+                output.deleteCharAt(output.length()-1);
+                output.deleteCharAt(output.length()-1);
+            }
+        }
+
+        // jump horizontal
+        for(int jh =1;jh<=(dc-sc);jh++){
+            printMazePaths(sr, sc+jh, dr, dc, output.append("h").append(jh));
+            if(!output.isEmpty()){
+                output.deleteCharAt(output.length()-1);
+                output.deleteCharAt(output.length()-1);
+            }
+        }
+
+        // jump diagonally
+        for(int jd =1;jd<=(dc-sc) && jd <=(dr-sr);jd++){
+            printMazePaths(sr+jd, sc+jd, dr, dc, output.append("d").append(jd));
+            if(!output.isEmpty()){
+                output.deleteCharAt(output.length()-1);
+                output.deleteCharAt(output.length()-1);
+            }
+        }
+
+
     }
 
     private static List<String> getMazePaths(int sr, int sc, int dr, int dc){

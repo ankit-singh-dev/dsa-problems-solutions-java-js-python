@@ -11,22 +11,9 @@ public class LargestPermutation {
     public static void main(String[] args) {
         int[] A = {3, 2, 4, 1, 5};
         int B = 3;
-        //System.out.println(Arrays.toString(solve(A, B)));
+        System.out.println(Arrays.toString(solve(A, B)));
         A = new int[]{3, 2, 4, 1, 5};
-        //System.out.println(Arrays.toString(solve1(A, B)));
-
-        int[][] twoDArray = {{0,30},{5,10},{15,20}};
-
-        int len = twoDArray.length;
-        System.out.println(len);
-        for(int i=0;i<len;i++){
-            System.out.println(Arrays.toString(twoDArray[i]));
-        }
-        Map<Integer,Integer> map = new TreeMap<>((i1,i2) -> i2.compareTo(i1));
-        for(int i=0;i<5;i++){
-            map.put(i,i+10);
-        }
-        System.out.println(map);
+        System.out.println(Arrays.toString(solve1(A, B)));
     }
 
     private static int[] solve1(int[] A, int B) {
