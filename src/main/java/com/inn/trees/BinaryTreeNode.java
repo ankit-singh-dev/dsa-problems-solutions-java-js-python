@@ -11,9 +11,9 @@ import lombok.Setter;
 @Getter
 public class BinaryTreeNode {
 	
-	private String data;
-	BinaryTreeNode leftChild;
-	BinaryTreeNode rightChild;
+	public String data;
+	public BinaryTreeNode leftChild;
+	public BinaryTreeNode rightChild;
 
 	public BinaryTreeNode(String data) {
 		this.data = data;

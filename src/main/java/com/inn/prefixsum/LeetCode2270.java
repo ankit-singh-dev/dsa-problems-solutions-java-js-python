@@ -1,4 +1,4 @@
-package prefixsum;
+package com.inn.prefixsum;
 
 /*
  * https://leetcode.com/problems/number-of-ways-to-split-array/description/

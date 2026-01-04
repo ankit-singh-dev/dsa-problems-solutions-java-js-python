@@ -7,15 +7,17 @@ https://leetcode.com/problems/minimum-size-subarray-sum/description/
 public class LeetCode209 {
 
     public static void main(String[] args) {
-        //int[] nums = {2, 3, 1, 2, 4, 3};
-        //int target = 7;
+        int[] nums = {2, 3, 1, 2, 4, 3};
+        int target = 7;
 
-        int[] nums = {1, 2, 3, 4, 5};
-        int target = 11;
+        //int[] nums = {1, 2, 3, 4, 5};
+        //int target = 11;
 
-        System.out.println(minSubArrayLen(target, nums));
+        //System.out.println(minSubArrayLen(target, nums));
         System.out.println(usingSlidingWindow(target, nums));
     }
+
+
 
     private static int usingSlidingWindow(int target, int[] nums) {
         int minLen = nums.length + 1;
@@ -26,12 +28,12 @@ public class LeetCode209 {
             // expansion
             sum += nums[windowEnd];
             if (sum >= target) {
-               minLen = Math.min(windowEnd-windowStart+1, minLen);
-               // shrinking
-                while(sum >= target && windowStart < windowEnd){
+                minLen = Math.min(windowEnd - windowStart + 1, minLen);
+                // shrinking
+                while (sum >= target && windowStart < windowEnd) {
                     sum -= nums[windowStart];
                     windowStart++;
-                    if(sum >= target) {
+                    if (sum >= target) {
                         minLen = Math.min(windowEnd - windowStart + 1, minLen);
                     }
                 }
